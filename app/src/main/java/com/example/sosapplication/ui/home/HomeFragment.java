@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.sosapplication.DAO.LienHe;
 import com.example.sosapplication.DAO.NguoiDung;
 import com.example.sosapplication.MainActivity2;
 import com.example.sosapplication.R;
@@ -24,6 +25,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 public class HomeFragment extends Fragment {
 
@@ -66,6 +71,7 @@ public class HomeFragment extends Fragment {
                 textViewName.setText(nguoiDung.getHoTen());
                 textViewSDT.setText(nguoiDung.getSdt());
                 textViewMaND.setText(nguoiDung.getMa_nd());
+
             }
 
             @Override

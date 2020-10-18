@@ -58,8 +58,7 @@ public class ThemLHActivity extends AppCompatActivity {
         buttonHuyThemLH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(ThemLHActivity.this, MainActivity2.class);
-                ThemLHActivity.this.startActivity(intent1);
+                finish();
             }
         });
 
@@ -83,7 +82,7 @@ public class ThemLHActivity extends AppCompatActivity {
                 } else {
                     editTextUuTien.setError("Nhap Do Uu Tien");
                 }
-                if (!sdt_lh.isEmpty() && dut != 0) {
+                if (!sdt_lh.isEmpty() && !editTextUuTien.getText().toString().isEmpty()) {
                     kiemTraSDT = 0;
                     myRef.child("NguoiDung").addValueEventListener(new ValueEventListener() {
                         @Override
@@ -110,8 +109,7 @@ public class ThemLHActivity extends AppCompatActivity {
 //                                                    lh.put("dut", String.valueOf(lienHe.getDut()));
                                                     myRef.child("LienHe").child(ma_lh).setValue(lienHe);
                                                     Toast.makeText(ThemLHActivity.this, "Thanh cong", Toast.LENGTH_SHORT).show();
-                                                    Intent intent = new Intent(ThemLHActivity.this, ContactsFragment.class);
-                                                    ThemLHActivity.this.startActivity(intent);
+                                                    finish();
 
                                                 } else {
                                                     if (kiemTraSDT == 2) {
